@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+#-*- coding: utf-8 -*-
+import sys
 
 import re
 from collections import namedtuple
@@ -16,7 +18,7 @@ class Tokenizer:
 
   def iter_tokens(self, file, ignore_ws=True):
     with open(file, 'r') as file:
-        input = file.read().replace('\n', '')
+        input = file.read().decode(sys.stdout.encoding).replace('\n', '')
         for match in self.re.finditer(input):
             if ignore_ws and match.lastgroup == 'WHITESPACE':
                 continue
@@ -44,5 +46,5 @@ if __name__ == "__main__":
   ]
   
 
-  for t in Tokenizer(TOKENS).iter_tokens("krzyzacy.txt"):
+  for t in Tokenizer(TOKENS).iter_tokens("krzyzacy.txt", False):
     print(t)
