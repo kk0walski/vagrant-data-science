@@ -49,7 +49,7 @@
   doboru hiperparametrów.
 \end{abstract}
 
-\section{Wielowarstwowa sieć neuronowa}
+\section{Wielowarstwowa sieć neuronowa - wyjaśnienie pojęć.}
 
 Jest to bardzo popularny typ sieci jednokierunkowej, kojarzony
 również ze skrótem MLP (od Multilayer Perceptron). Sieć typu MLP
@@ -65,318 +65,273 @@ uczenia wagi.[1]
 \begin{figure}[h]
   \centering
   \fbox{\includegraphics[width=0.5\linewidth]{img/MLP.jpg}}
-  \caption{Sample figure caption.}
+  \caption{Schemat MLP.}
 \end{figure}
 
-\subsection{Style}
+\subsection{Neuron}
 
-Papers to be submitted to NIPS 2017 must be prepared according to the
-instructions presented here. Papers may only be up to eight pages
-long, including figures. This does not include acknowledgments and 
-cited references which are allowed on subsequent pages.
-Papers that exceed these limits will not be reviewed, or in any
-other way considered for presentation at the conference.
+Podstawowy element budujący strukturę sieci neuronowej. Jest to element przetwarzający
+informacje, w pewnym stopniu wzorowany na funkcjonowaniu biologicznej komórki nerwowej,
+ale bardzo uproszczony.
 
-The margins in 2017 are the same as since 2007, which allow for
-$\sim$$15\%$ more words in the paper compared to earlier years.
+Z powodu tych uproszczeń w  zasadzie nie powinno się używać dla tych elementów nazwy ‘neuron’,
+bo ich właściwości daleko odbiegają od prawdziwych komórek nerwowych i ich dokładnych modeli
+(na przykład dostępnych w programie GENESIS). Ale nazwa neuron przy-jęła się i jest
+powszechnie używana.
 
-Authors are required to use the NIPS \LaTeX{} style files obtainable
-at the NIPS website as indicated below. Please make sure you use the
-current files and not previous versions. Tweaking the style files may
-be grounds for rejection.
+W strukturze neuronu odnaleźć można wiele wejść oraz jedno wyjście. Ważnym składnikiem
+neuronu jest komplet wag, których wartości decydujące o zachowaniu neuronu zazwyczaj
+ustalane są w trakcie procesu uczenia.
 
-\subsection{Retrieval of style files}
-
-The style files for NIPS and other conference information are
-available on the World Wide Web at
-\begin{center}
-  \url{http://www.nips.cc/}
-\end{center}
-The file \verb+nips_2017.pdf+ contains these instructions and
-illustrates the various formatting requirements your NIPS paper must
-satisfy.
-
-The only supported style file for NIPS 2017 is \verb+nips_2017.sty+,
-rewritten for \LaTeXe{}.  \textbf{Previous style files for \LaTeX{}
-  2.09, Microsoft Word, and RTF are no longer supported!}
-
-The new \LaTeX{} style file contains two optional arguments:
-\verb+final+, which creates a camera-ready copy, and \verb+nonatbib+,
-which will not load the \verb+natbib+ package for you in case of
-package clash.
-
-At submission time, please omit the \verb+final+ option. This will
-anonymize your submission and add line numbers to aid review.  Please
-do \emph{not} refer to these line numbers in your paper as they will
-be removed during generation of camera-ready copies.
-
-The file \verb+nips_2017.tex+ may be used as a ``shell'' for writing
-your paper. All you have to do is replace the author, title, abstract,
-and text of the paper with your own.
-
-The formatting instructions contained in these style files are
-summarized in Sections \ref{gen_inst}, \ref{headings}, and
-\ref{others} below.
-
-\section{General formatting instructions}
-\label{gen_inst}
-
-The text must be confined within a rectangle 5.5~inches (33~picas)
-wide and 9~inches (54~picas) long. The left margin is 1.5~inch
-(9~picas).  Use 10~point type with a vertical spacing (leading) of
-11~points.  Times New Roman is the preferred typeface throughout, and
-will be selected for you by default.  Paragraphs are separated by
-\nicefrac{1}{2}~line space (5.5 points), with no indentation.
-
-The paper title should be 17~point, initial caps/lower case, bold,
-centered between two horizontal rules. The top rule should be 4~points
-thick and the bottom rule should be 1~point thick. Allow
-\nicefrac{1}{4}~inch space above and below the title to rules. All
-pages should start at 1~inch (6~picas) from the top of the page.
-
-For the final version, authors' names are set in boldface, and each
-name is centered above the corresponding address. The lead author's
-name is to be listed first (left-most), and the co-authors' names (if
-different address) are set to follow. If there is only one co-author,
-list both author and co-author side by side.
-
-Please pay special attention to the instructions in Section \ref{others}
-regarding figures, tables, acknowledgments, and references.
-
-\section{Headings: first level}
-\label{headings}
-
-All headings should be lower case (except for first word and proper
-nouns), flush left, and bold.
-
-First-level headings should be in 12-point type.
-
-\subsection{Headings: second level}
-
-Second-level headings should be in 10-point type.
-
-\subsubsection{Headings: third level}
-
-Third-level headings should be in 10-point type.
-
-\paragraph{Paragraphs}
-
-There is also a \verb+\paragraph+ command available, which sets the
-heading in bold, flush left, and inline with the text, with the
-heading followed by 1\,em of space.
-
-\section{Citations, figures, tables, references}
-\label{others}
-
-These instructions apply to everyone.
-
-\subsection{Citations within the text}
-
-The \verb+natbib+ package will be loaded for you by default.
-Citations may be author/year or numeric, as long as you maintain
-internal consistency.  As to the format of the references themselves,
-any style is acceptable as long as it is used consistently.
-
-The documentation for \verb+natbib+ may be found at
-\begin{center}
-  \url{http://mirrors.ctan.org/macros/latex/contrib/natbib/natnotes.pdf}
-\end{center}
-Of note is the command \verb+\citet+, which produces citations
-appropriate for use in inline text.  For example,
-\begin{verbatim}
-   \citet{hasselmo} investigated\dots
-\end{verbatim}
-produces
-\begin{quote}
-  Hasselmo, et al.\ (1995) investigated\dots
-\end{quote}
-
-If you wish to load the \verb+natbib+ package with options, you may
-add the following before loading the \verb+nips_2017+ package:
-\begin{verbatim}
-   \PassOptionsToPackage{options}{natbib}
-\end{verbatim}
-
-If \verb+natbib+ clashes with another package you load, you can add
-the optional argument \verb+nonatbib+ when loading the style file:
-\begin{verbatim}
-   \usepackage[nonatbib]{nips_2017}
-\end{verbatim}
-
-As submission is double blind, refer to your own published work in the
-third person. That is, use ``In the previous work of Jones et
-al.\ [4],'' not ``In our previous work [4].'' If you cite your other
-papers that are not widely available (e.g., a journal paper under
-review), use anonymous author names in the citation, e.g., an author
-of the form ``A.\ Anonymous.''
-
-\subsection{Footnotes}
-
-Footnotes should be used sparingly.  If you do require a footnote,
-indicate footnotes with a number\footnote{Sample of the first
-  footnote.} in the text. Place the footnotes at the bottom of the
-page on which they appear.  Precede the footnote with a horizontal
-rule of 2~inches (12~picas).
-
-Note that footnotes are properly typeset \emph{after} punctuation
-marks.\footnote{As in this example.}
-
-\subsection{Figures}
-
-All artwork must be neat, clean, and legible. Lines should be dark
-enough for purposes of reproduction. The figure number and caption
-always appear after the figure. Place one line space before the figure
-caption and one line space after the figure. The figure caption should
-be lower case (except for first word and proper nouns); figures are
-numbered consecutively.
-
-You may use color figures.  However, it is best for the figure
-captions and the paper body to be legible if the paper is printed in
-either black/white or in color.
 \begin{figure}[h]
   \centering
-  \fbox{\rule[-.5cm]{0cm}{4cm} \rule[-.5cm]{4cm}{0cm}}
-  \caption{Sample figure caption.}
+  \fbox{\includegraphics[width=0.5\linewidth]{img/neuron.jpg}}
+  \caption{Schemat neuronu}
 \end{figure}
 
-\subsection{Tables}
+W  neuronie wykonywane są zwykle dwie czynności: agregacja danych wejściowych
+(z  uwzględnieniem  wag) oraz generacja sygnału wyjściowego (danej wyjściowej).
+Ze względu na sposób agregacji oraz formę funkcji aktywacji wyróżnia się różne typy
+neuronów. Najczęściej stosowane są neurony liniowe, neurony sigmoidalne i neurony radialne.
+Odmianą neuronów sigmoidalnych są neurony tangensoidalne.[1]
 
-All tables must be centered, neat, clean and legible.  The table
-number and title always appear before the table.  See
-Table~\ref{sample-table}.
+\subsection{Neuron sigmoidalny}
 
-Place one line space before the table title, one line space after the
-table title, and one line space after the table. The table title must
-be lower case (except for first word and proper nouns); tables are
-numbered consecutively.
+Jest to najbardziej popularny neuron nieliniowy, nadający się do budowy sieci MLP.
+W neu-ronie sigmoidalnym zastosowana jest liniowa agregacja danych wejściowych
+(często z  uwzględnieniem składnika BIAS) oraz sigmoidalna funkcja aktywacji.
+Na marginesie można dodać, że schemat działania neuronu sigmoidalnego jest najbardziej
+zbliżony do działania prawdziwej biologicznej komórki nerwowej.
 
-Note that publication-quality tables \emph{do not contain vertical
-  rules.} We strongly suggest the use of the \verb+booktabs+ package,
-which allows for typesetting high-quality, professional tables:
-\begin{center}
-  \url{https://www.ctan.org/pkg/booktabs}
-\end{center}
-This package was used to typeset Table~\ref{sample-table}.
-
-\begin{table}[t]
-  \caption{Sample table title}
-  \label{sample-table}
+\begin{figure}[h]
   \centering
-  \begin{tabular}{lll}
-    \toprule
-    \multicolumn{2}{c}{Part}                   \\
-    \cmidrule{1-2}
-    Name     & Description     & Size ($\mu$m) \\
-    \midrule
-    Dendrite & Input terminal  & $\sim$100     \\
-    Axon     & Output terminal & $\sim$10      \\
-    Soma     & Cell body       & up to $10^6$  \\
-    \bottomrule
-  \end{tabular}
-\end{table}
+  \fbox{\includegraphics[width=0.5\linewidth]{img/neuronSigm.jpg}}
+  \caption{Schemat neuronu sigmoidalnego}
+\end{figure}
 
-\section{Final instructions}
+Warto jeszcze raz podkreślić, że zdecydowana większość dobrze funkcjonujących sieci neuronowych,
+wykorzystywanych w praktyce w różnych dziedzinach. wykorzystuje w swojej strukturze,
+a zwłaszcza w warstwach ukrytych, składniki w postaci neuronów sigmoidalnych.
 
-Do not change any aspects of the formatting parameters in the style
-files.  In particular, do not modify the width or length of the
-rectangle the text should fit into, and do not change font sizes
-(except perhaps in the \textbf{References} section; see below). Please
-note that pages should be numbered.
+\subsection{Perceptron}
 
-\section{Preparing PDF files}
+Nazwa kojarzona często z jednokierunkowymi sieciami neuronowymi uczonymi metodą uczenia z nauczycielem.
+Nazwa ta została po raz pierwszy użyta dla określenia sprzę-towej elektromechanicznej sieci neuronowej,
+którą zbudował i przebadał  w 1960 roku Frank Rosenblatt na Uniwersytecie Cornella.
 
-Please prepare submission files with paper size ``US Letter,'' and
-not, for example, ``A4.''
+\subsection{Epoka}
 
-Fonts were the main cause of problems in the past years. Your PDF file
-must only contain Type 1 or Embedded TrueType fonts. Here are a few
-instructions to achieve this.
+Podczas uczenia sieci neuronowej trzeba wykonać bardzo wiele kroków algorytmu uczenia zanim błąd
+stanie się akceptowalnie mały. Tymczasem zbiór uczący zawiera zwykle ograniczoną liczbę przypadków
+uczących, w typowych przypadkach setki lub nawet tysiące razy mniej liczną niż liczba
+koniecznych kroków algorytmu uczenia. Z tego zestawienia wynika, że zbiór uczący musi
+być wykorzystywany w procesie uczenia wielokrotnie. Dla zaznaczenia tego faktu wprowadzono
+pojęcie epoki, rozumiejąc pod tym pojęciem jednorazowe użycie w procesie uczenia wszystkich
+przypadków uczących zawartych w zbiorze uczącym. Po wykonaniu wszystkich kroków należących
+do jednej epoki algorytm uczący dokonuje oceny zdolności sieci do generalizacji wyników
+uczenia przy wykorzystaniu zbioru walidacyjnego. Po stwierdzeniu, że zarówno błąd obliczany
+na zbiorze uczącym, jak i błąd wyznaczony dla zbioru walidacyjnego nadal jeszcze obiecująco
+maleją – algorytm uczący wykonuje następną epokę. W przeciwnym przypadku proces uczenia
+zostaje zatrzymany.
+
+Gdyby w  kolejnych epokach przypadki uczące pokazywać stale w tej samej
+kolejności – to istniałaby obawa, że proces uczenia może zmieniać wagi w kółko,
+powracając po każ-dym cyklu do punktu wyjścia. Przedstawia to rysunek, na którym
+po lewej stronie pokazano właśnie taki „zapętlony” proces zmiany wag, nie prowadzący
+do nauczenia sieci nawet po bardzo długim procesie uczenia. Na rysunku pokazano cykliczne
+zmienianie się wartości dwóch wybranych wag (bo tylko to można pokazać na rysunku),
+ale podobny niekorzystny proces zachodzi także dla wszystkich innych wag w całej sieci.
+
+Zapętleniu uczenia można zapobiec poprzez randomizację zbioru uczącego,
+to znaczy poprzez zmianę kolejności pokazywania poszczególnych przypadków uczących
+w kolejnych epokach. Wtedy proces zmiany wag w trakcie uczenia porządkuje się i wyraźnie widać,
+że zmierza do okre-ślonego celu, odpowiadającego optymalnemu zestawowi wag zapewniającemu 
+rozwiązywanie stawianych sieci zadań z minimalnym błędem (co pokazano na rysunku po prawej stronie).
+
+\subsection{Jednokierunkowa sieć neuronowa}
+
+Sieci neuronowe budowane są zazwyczaj w taki sposób, że przepływ sygnałów odbywa się
+w nich wyłącznie w kierunku od wejścia (poprzez ewentualne warstwy ukryte) do wyjścia.
+Wykluczony jest przepływ sygnałów w drugą stronę, co powoduje, że sieci tego typu są
+przeciwstawiane sieciom rekurencyjnym. Sieci spełniające wyżej podany warunek nazywane
+są sieciami jednokierunkowymi albo sieciami typu feedforward. Sam przepływ sygnałów w
+jednym kierunku (od wejścia do wyjścia) nie przesądza jeszcze o rodzaju sieci i zasadzie 
+jej działania, gdyż wśród jednokierunkowych sieci neuronowych wyróżnić można między
+innymi wielowarstwowe perceptrony (sieci MLP), sieci radialne (RBF), sieci uogólnionej
+regresji (GRNN), probabilistyczne sieci neuronowe (PNN) i inne. W praktyce autorzy
+najczęściej utożsamiają nazwę sieci jednokierunkowej z siecią typu MLP.
+
+\subsection{Funkcja aktywacji}
+
+Po agregacji danych wejściowych z uwzględnieniem wag powstaje sygnał sumarycznego pobudzenia.
+Rola funkcji aktywacji polega na tym, że musi ona określić sposób oblicza-nia wartości
+sygnału wyjściowego neuronu na podstawie wartości tego sumarycznego pobudzenia.
+W literaturze rozważano wiele różnych propozycji funkcji aktywacji,
+jednak do powszechnego użytku weszły właściwie cztery z  nich: funkcja liniowa (neuron liniowy),
+funkcja sigmoidalna (neuron sigmoidalny), funkcja tangensoidalna (dokładnie jest to funkcja
+tangens hiperboliczny, ale skrótowo mówi się właśnie neuron tangensoidalny) oraz funkcja
+Gaussa (neuron radialny).
+
+\subsection{Funkcja błędu}
+
+Błąd popełniany przez sieć neuronową zależny jest od współczynników wag występujących
+w sieci i doskonalonych przez algorytmy uczenia. Jeśli wyobrazimy sobie (patrz rysunek),
+że w danym momencie procesu uczenia w sieci został ustalony pewien zestaw wag
+(nazwany na rysunku pierwszym zestawem) i jeśli przy tym zestawie wag przeprowadzimy
+egzamin, to uzyskamy pewną wartość błędu, przedstawioną na rysunku przy pomocy pionowej
+strzałki. Jeśli wartość zestawu wag się zmieni (na przykład w wyniku uczenia)
+i będziemy mieli do czynienia z drugim zestawem – to dla niego także można będzie
+wyznaczyć błąd i przedstawić go – jak na rysunku – przy pomocy niższej strzałki.
+Jeśli taką czynność wystawiania pionowych strzałek oznaczających wartości błędów
+wykonamy w każdym punkcie szarej płaszczyzny, re-prezentującej na rysunku wszystkie
+możliwe zestawy wag – to wierzchołki strzałek wyznaczą pewną powierzchnię rozpiętą ponad
+szarą płaszczyzną. Właśnie ta powierzchnia to potrzebna do wielu celów (między innymi
+w opisie procesu uczenia) funkcja błędu.
+
+\subsection{Wagi}
+
+Parametry neuronu decydujące o jego właściwościach i roli w procesie
+rozwiązywania przez sieć postawionego zadania. Zwykle wagi dopasowuje
+w całej sieci używany algorytm ucze-nia lub samouczenia.
+Komplet wartości wag ustalonych we wszystkich neuronach w trakcie uczenia
+lub samouczenia determinuje wiedzę, jaką posiada sieć neuronowa.
+
+\section{Omówienie wykorzystanej technologii, danych oraz zbudowanej sieci}
+
+W pracy wykorzystany zostanie framework do głębokiego uczenia o nazwie TensorFlow,
+a badanymi danymi będą obrazy cifar10.
+
+\begin{figure}[h]
+  \centering
+  \fbox{\includegraphics[width=0.5\linewidth]{img/cifar.jpg}}
+  \caption{Schemat neuronu sigmoidalnego}
+\end{figure}
+
+Jak widać obrazy cifar przedstawiają różne zwierzęta, samochody i inne. Są one odpowiednio skategoryzowane.
+Podstatowawą sięcią neuronową wykorzystywaną do tego zadania jest sieć trzy warstwowa.
+
+Rząd neuronów nazywa się warstwą, a jedna sieć może mieć wiele warstw.
+Architektura neuronów w sieci jest często nazywana topologią sieci.
+
+Składa się z następujących warstw:
+\subsection{Warstwa wejściowa}
+
+Dolna warstwa, która pobiera dane z zestawu danych, nazywa się warstwą widoczną,
+ponieważ jest odsłoniętą częścią sieci. Często sieć neuronowa jest rysowana
+z widoczną warstwą z jednym neuronem na wartość wejściową lub kolumnę
+w zbiorze danych. Nie są to neurony, jak opisano powyżej, ale po prostu
+przekazują wartość wejściową do następnej warstwy.
+W naszym przypadku jest to warstwa spłaszczająca,
+sprawiająca że macierz jest przekształcana w wektor.
+
+\subsection{Warstwa ukryta}
+
+Warstwy po warstwie wejściowej są nazywane warstwami ukrytymi,
+ponieważ nie są bezpośrednio narażone na dane wejściowe.
+Najprostszą strukturą sieci jest posiadanie jednego neuronu w ukrytej warstwie,
+który bezpośrednio wyprowadza wartość.
+
+Biorąc pod uwagę wzrost mocy obliczeniowej i wydajnych bibliotek,
+można zbudować bardzo głębokie sieci neuronowe. Głębokie uczenie się może odnosić się
+do posiadania wielu ukrytych warstw w sieci neuronowej. Są głębokie, ponieważ byłyby
+niewyobrażalnie powolne, aby trenować historycznie, ale mogą zająć sekundy lub minuty,
+aby trenować przy użyciu nowoczesnych technik i sprzętu.
+
+\subsection{Warstwa wyjściowa}
+
+Ostatnia ukryta warstwa nazywana jest warstwą wyjściową i odpowiada za wyprowadzenie
+wartości lub wektora wartości odpowiadających formatowi wymaganemu dla problemu.
+
+Wybór funkcji aktywacji w warstwie wyjściowej jest silnie ograniczony przez typ problemu,
+który modelujesz. Na przykład:
 
 \begin{itemize}
-
-\item You should directly generate PDF files using \verb+pdflatex+.
-
-\item You can check which fonts a PDF files uses.  In Acrobat Reader,
-  select the menu Files$>$Document Properties$>$Fonts and select Show
-  All Fonts. You can also use the program \verb+pdffonts+ which comes
-  with \verb+xpdf+ and is available out-of-the-box on most Linux
-  machines.
-
-\item The IEEE has recommendations for generating PDF files whose
-  fonts are also acceptable for NIPS. Please see
-  \url{http://www.emfield.org/icuwb2010/downloads/IEEE-PDF-SpecV32.pdf}
-
-\item \verb+xfig+ "patterned" shapes are implemented with bitmap
-  fonts.  Use "solid" shapes instead.
-
-\item The \verb+\bbold+ package almost always uses bitmap fonts.  You
-  should use the equivalent AMS Fonts:
-\begin{verbatim}
-   \usepackage{amsfonts}
-\end{verbatim}
-followed by, e.g., \verb+\mathbb{R}+, \verb+\mathbb{N}+, or
-\verb+\mathbb{C}+ for $\mathbb{R}$, $\mathbb{N}$ or $\mathbb{C}$.  You
-can also use the following workaround for reals, natural and complex:
-\begin{verbatim}
-   \newcommand{\RR}{I\!\!R} %real numbers
-   \newcommand{\Nat}{I\!\!N} %natural numbers
-   \newcommand{\CC}{I\!\!\!\!C} %complex numbers
-\end{verbatim}
-Note that \verb+amsfonts+ is automatically loaded by the
-\verb+amssymb+ package.
-
+  \item Problem regresji może mieć pojedynczy neuron wyjściowy, a neuron może nie mieć funkcji aktywacji.
+  \item Problem z klasyfikacją binarną może mieć pojedynczy neuron wyjściowy i użyć funkcji
+  aktywacji sigmoidalnej do wygenerowania wartości z zakresu od 0 do 1 w celu przedstawienia
+  prawdopodobieństwa przewidywania wartości dla klasy 1. Można to zmienić w wyraźną wartość
+  klasy za pomocą progu 0,5 i wartości przyciągania mniejsze niż próg do 0, w przeciwnym razie do 1.
+  \item Problem klasyfikacji wielu klas może mieć wiele neuronów w warstwie wyjściowej,
+  po jednym dla każdej klasy (np. Trzy neurony dla trzech klas w znanym problemie
+  klasyfikacji kwiatów tęczówki). W takim przypadku można zastosować funkcję aktywacji
+  softmax do wyprowadzenia prawdopodobieństwa sieci przewidującego każdą
+  z wartości klasy. Wybierając wyjście z najwyższym prawdopodobieństwem,
+  można wykorzystać do uzyskania wyraźnej wartości klasyfikacji klasy.
 \end{itemize}
 
-If your file contains type 3 fonts or non embedded TrueType fonts, we
-will ask you to fix it.
+\subsection{Funkcja optymalizacyjna}
 
-\subsection{Margins in \LaTeX{}}
+Jest to procedura poszukiwania minimum globalnego funkcji błędu.
+Jedną ze znanych metod jest tzw. momentum, czyli funkcji pochodnej biorącej pod uwagę poprzedni
+znak pochodnej.
+Standardowym podejściem jest funkcja gradientu. Znajdowanie minimum globalnego nie jest łatwym zadaniem.
 
-Most of the margin problems come from figures positioned by hand using
-\verb+\special+ or other commands. We suggest using the command
-\verb+\includegraphics+ from the \verb+graphicx+ package. Always
-specify the figure width as a multiple of the line width as in the
-example below:
-\begin{verbatim}
-   \usepackage[pdftex]{graphicx} ...
-   \includegraphics[width=0.8\linewidth]{myfile.pdf}
-\end{verbatim}
-See Section 4.4 in the graphics bundle documentation
-(\url{http://mirrors.ctan.org/macros/latex/required/graphics/grfguide.pdf})
+\section{Badania}
 
-A number of width problems arise when \LaTeX{} cannot properly
-hyphenate a line. Please give LaTeX hyphenation hints using the
-\verb+\-+ command when necessary.
+Nasz model w tensorflow jest trzywarstwowy i wygląda tak:
+\begin{lstlisting}
+model = tf.keras.models.Sequential([
+    layers.Flatten(input_shape=(32,32,3)),
+    layers.Dense(1024, activation='relu', use_bias=True),
+    layers.Dense(10, activation='softmax', use_bias=True)
+])
+\end{lstlisting}
 
-\subsubsection*{Acknowledgments}
+Jak widać jest to najprostrza sieć trzywarstwowa z funkcją aktywacyjną softmax dla wyjściowej
+warstwy oraz biasem. A więc nadaje się do problemu wieloklasowego.
 
-Use unnumbered third level headings for the acknowledgments. All
-acknowledgments go at the end of the paper. Do not include
-acknowledgments in the anonymized submission, only in the final paper.
+\begin{figure}[h]
+  \centering
+  \fbox{\includegraphics[width=0.5\linewidth]{img/adam_vs_gdc.jpg}}
+  \caption{Porównannie wyniku działania sieci przez 10 epok z innym algorytmem optymalizacji}
+\end{figure}
+
+Jak widać metoda gdc, która w tensorflow korazysta z momentum okazała się być lepsza niż metoda adam.
+Skoro wiemy, że optymalizacja oparta na momentum jest lepsza od optymalizacji adam, spróbójmy inaczej
+poleprzyć naszą metodę dodając do niej kolejną warstwę.
+
+\begin{figure}[H]
+  \centering
+  \fbox{\includegraphics[width=0.5\linewidth]{img/2layers.jpg}}
+  \caption{Porównannie wyniku działania sieci przez 10 epok
+  z innym algorytmem optymalizacji oraz dodatkową warstwą ukrytą.}
+\end{figure}
+
+Jak widać po rysunku zastosowanie dodatkowej warstwy rzeczywiście poprawiło wynik,
+jednak należy pamiętać, że wydłuża ona uczenie się algorytmu.
+Zobaczmy jaka będzie skuteczność po dodaniu trzeciej warstwy ukrytej.
+
+\begin{figure}[H]
+  \centering
+  \fbox{\includegraphics[width=0.5\linewidth]{img/3layers.jpg}}
+  \caption{Porównannie wyniku działania sieci przez 10 epok
+  z innym algorytmem optymalizacji oraz dodatkową trzecia warstwą ukrytą.}
+\end{figure}
+
+Wykres ten pokazuje, że nie tylko trzecia warstwa wpływa na wynik, ale także dobór wag początkowych dla algorytmu,
+bo jak widać wykres sieci z trzema warstwami ukrytymi ma większe wyniki na początek, co znaczy, że miał wylosowane lepsze wagi.
+
+\begin{figure}[H]
+  \centering
+  \fbox{\includegraphics[width=0.5\linewidth]{img/loss.jpg}}
+  \caption{Porównannie wyniku działania sieci przez 10 epok
+  z innym algorytmem optymalizacji oraz inną funkcją straty.}
+\end{figure}
+
+Ten wykres pokazuje natomiast, że w algorytmie musi być odpowiednio dobrana funkcja straty do problemu.
+W najgorszej sieci skorzystałem z funkcji straty obliczającą utratę 
+dywergencji Kullbacka-Leiblera między wartością przewidywaną a prawdziwą.
+Ta funkja straty dała fatalne rezultaty.
+
+Podsumowując, wyniki sieci neuronowej zależą od wylosowanych wag sieci, funkcji straty, funkcji optymalizacyjnej oraz liczb warstw sieci.
+Zależą także od funkcji aktywacyjnej danych warstw sieci neuronowej.
 
 \section*{References}
-
-References follow the acknowledgments. Use unnumbered first-level
-heading for the references. Any choice of citation style is acceptable
-as long as you are consistent. It is permissible to reduce the font
-size to \verb+small+ (9 point) when listing the references. {\bf
-  Remember that you can go over 8 pages as long as the subsequent ones contain
-  \emph{only} cited references.}
-\medskip
 
 \small
 
 [1] Maciej Szaleniec \ \& Ryszard Tadeusiewicz\ LEKSYKON SIECI NEURONOWYCH 
 [Lexicon on Neural Networks] \ Projekt nauka \ 978-83-63270-10-0.
-
-[2] Bower, J.M.\ \& Beeman, D.\ (1995) {\it The Book of GENESIS:
-  Exploring Realistic Neural Models with the GEneral NEural SImulation
-  System.}  New York: TELOS/Springer--Verlag.
-
-[3] Hasselmo, M.E., Schnell, E.\ \& Barkai, E.\ (1995) Dynamics of
-learning and recall at excitatory recurrent synapses and cholinergic
-modulation in rat hippocampal region CA3. {\it Journal of
-  Neuroscience} {\bf 15}(7):5249-5262.
 
 \end{document}
 
