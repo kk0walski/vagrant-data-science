@@ -49,16 +49,24 @@
   doboru hiperparametrów.
 \end{abstract}
 
-\section{Submission of papers to NIPS 2017}
+\section{Wielowarstwowa sieć neuronowa}
 
-NIPS requires electronic submissions.  The electronic submission site
-is
-\begin{center}
-  \url{https://cmt.research.microsoft.com/NIPS2017/}
-\end{center}
+Jest to bardzo popularny typ sieci jednokierunkowej, kojarzony
+również ze skrótem MLP (od Multilayer Perceptron). Sieć typu MLP
+ma zwykle strukturę obejmującą warstwy: wej-ściową, jedną lub dwie
+warstwy ukryte złożone z neuronów sigmoidalnych oraz war-stwę
+wyjściową złożoną z neuronów sigmoidalnych lub z neuronów liniowych.
+Uczenie perceptronu wielowarstwowego realizowane jest najczęściej
+przy użyciu metody wstecznej propagacji błędów. Na rysunku wewnątrz
+kwadratów reprezentujących neurony narysowa-no wykresy przywołujące
+odpowiednie funkcje aktywacji, a kółkami oznaczono podlegają-ce procesowi
+uczenia wagi.[1]
 
-Please read carefully the instructions below and follow them
-faithfully.
+\begin{figure}[h]
+  \centering
+  \fbox{\includegraphics[width=0.5\linewidth]{img/MLP.jpg}}
+  \caption{Sample figure caption.}
+\end{figure}
 
 \subsection{Style}
 
@@ -358,10 +366,8 @@ size to \verb+small+ (9 point) when listing the references. {\bf
 
 \small
 
-[1] Alexander, J.A.\ \& Mozer, M.C.\ (1995) Template-based algorithms
-for connectionist rule extraction. In G.\ Tesauro, D.S.\ Touretzky and
-T.K.\ Leen (eds.), {\it Advances in Neural Information Processing
-  Systems 7}, pp.\ 609--616. Cambridge, MA: MIT Press.
+[1] Maciej Szaleniec \ \& Ryszard Tadeusiewicz\ LEKSYKON SIECI NEURONOWYCH 
+[Lexicon on Neural Networks] \ Projekt nauka \ 978-83-63270-10-0.
 
 [2] Bower, J.M.\ \& Beeman, D.\ (1995) {\it The Book of GENESIS:
   Exploring Realistic Neural Models with the GEneral NEural SImulation
