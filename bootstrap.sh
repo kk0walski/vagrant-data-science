@@ -64,7 +64,7 @@ pip_install theano
 pip_install keras
 
 # Tensorflow
-sudo pip install --upgrade https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.9.0-cp27-none-linux_x86_64.whl >/dev/null 2>&1
+sudo pip install --upgrade https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-2.0.0-cp27-none-linux_x86_64.whl >/dev/null 2>&1
 
 # Others
 apt_install libhdf5-7
